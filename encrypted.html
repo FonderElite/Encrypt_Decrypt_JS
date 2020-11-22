@@ -1,0 +1,66 @@
+<html>
+    <head>
+    
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    
+        
+    </head>
+    <body>
+       
+          
+          
+            
+            <strong><label>Original String:</label></strong>
+            <span id="demo0">sup</span>
+          
+            <br>
+            <br>
+            
+            <strong><label>Encrypted:</label></strong>
+            <span id="demo1">sup</span>
+          
+            <br>
+            <br>
+            
+            <strong><label>Decrypted:</label></strong>
+            <span id="demo2">sup</span>
+          
+            <br> 
+            <br>
+          
+            <strong><label>String after Decryption:</label></strong>
+            <span id="demo3">sup</span>
+          
+            <p id="base64"></p>
+            <br />
+            <br />
+
+            <script>
+                // INIT
+var myString   = "blablabla Card game bla";
+var myPassword = "myPassword";
+
+// PROCESS
+var encrypted = CryptoJS.AES.encrypt(myString, myPassword);
+var decrypted = CryptoJS.AES.decrypt(encrypted, myPassword);
+document.getElementById("demo0").innerHTML = myString;
+document.getElementById("demo1").innerHTML = encrypted;
+document.getElementById("demo2").innerHTML = decrypted;
+document.getElementById("demo3").innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
+
+var stringy = "hello world";
+var encrypted = (stringy);
+document.getElementById('base64').innerHTML = encrypted;
+/*string = 'hi';
+var encrypted = CryptoJS.base64.encrypt(string);
+document.innerhtml = encrypted;
+
+btoa() = encode to bas64;
+atob() = decode base64;
+*/
+            </script>
+
+
+
+    </body>
+</html>
