@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function(event){
         el.find('.message').html(result);
 
         }else{
-            alert('Invalid Action!');
+            alert("Invalid Action!");
         }
     })
 })
