@@ -1,9 +1,9 @@
 
        
         
-      var str = "Connecting to the Server of the FBI...      Ip Address: 192.133.243.19..    20%...      40%....     60%....        80%....                 100%...     Initializing Anonymity..                             SUCCESS!!!                     Anon#2038 Successfully Hacked the Server!                     ";
-var count = 0;
-var k = setInterval(function(){
+let str = "Connecting to the Server of the FBI...      Ip Address: 192.133.243.19..    20%...      40%....     60%....        80%....                 100%...     Initializing Anonymity..                             SUCCESS!!!                     Anon#2038 Successfully Hacked the Server!                     ";
+let count = 0;
+let k = setInterval(function(){
     document.getElementById('terminalp').innerHTML += str[count++] + "";
     if(count == str.length){
         clearInterval(k);
@@ -23,20 +23,20 @@ var k = setInterval(function(){
 document.addEventListener("DOMContentLoaded", function(event){
     $('button').on('click', function(){
         if($(this).html() == 'Encrypt'){
-            var el = $('.encrypt_input')
-            var secret = $('.secret').val();
-            var message = el.find('.message').val();
-            var result = encrypt(message, secret);
-            var el = $('.encrypt_result');
+           let el = $('.encrypt_input')
+           let secret = $('.secret').val();
+           let message = el.find('.message').val();
+           let result = encrypt(message, secret);
+          let el = $('.encrypt_result');
             el.find('.message').html(JSON.stringify(result));
 
         }
         else if($(this).html() == 'Decrypt'){
-        var el = $('.decrypt_input');
-        var secret = el.find('.secret').val();
-        var message = JSON.parse(el.find('.message').val());
-        var result = decrypt(message, secret);
-        var el = $('.decrypt_result');
+        let el = $('.decrypt_input');
+        let secret = el.find('.secret').val();
+        let message = JSON.parse(el.find('.message').val());
+        let result = decrypt(message, secret);
+        let el = $('.decrypt_result');
         el.find('.message').html(result);
 
         }else{
@@ -45,11 +45,11 @@ document.addEventListener("DOMContentLoaded", function(event){
     })
 })
     
-var encrypt = function(message, secret) {
-    var salt = CryptoJS.lib.WordArray.random(128/8);w
-    var iv = CryptoJS.lib.WordArray.random(128/8);
+let encrypt = function(message, secret) {
+    let salt = CryptoJS.lib.WordArray.random(128/8);w
+    let iv = CryptoJS.lib.WordArray.random(128/8);
 
-    var key = CryptoJS.PBKDF2(
+    let key = CryptoJS.PBKDF2(
         secret,
         salt,
         {keySize: 256/32, iterations: 1000 }
@@ -72,16 +72,16 @@ var encrypt = function(message, secret) {
     };
 }
 
-var decrypt = function(crypted, secret) {
-    var key = CryptoJS.PBKDF2(
+let decrypt = function(crypted, secret) {
+    let key = CryptoJS.PBKDF2(
         secret,
         CryptoJS.enc.Hex.parse(crypted.salt),
         {keySize: 256/32, iterations: 1000}
     );
 
-    var iv = CryptoJS.enc.Hex.parse(crypted.iv);
+    let iv = CryptoJS.enc.Hex.parse(crypted.iv);
 
-    var cipherStuff = CryptoJS.lib.CipherParams.create({
+    let cipherStuff = CryptoJS.lib.CipherParams.create({
         key : key,
         iv : iv,
         ciphertext : CryptoJS.enc.Hex.parse(crypted.message)
