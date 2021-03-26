@@ -1,7 +1,8 @@
 # Encrypt_Decrypt_JS
 **Encrypt** and **Decrypt** using this hashing algorithm that's made using the library CryptoJS
-<img src="https://webstockreview.net/images/clipart-key-padlock-key-16.png" width=250>
-# What the f is encryption?
+<img src="https://webstockreview.net/images/clipart-key-padlock-key-16.png">
+
+# What the F!? is encryption?
 In cryptography, encryption is the process of encoding information. This process converts the original representation of the information, known as plaintext, into an alternative form known as ciphertext. Ideally, only authorized parties can decipher a ciphertext back to plaintext and access the original information.
 >In short encryption is to ensure that your information is safe and only those you give access to it with a key can do so.
 
